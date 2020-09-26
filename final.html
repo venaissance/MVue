@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>实现编译功能的MVue</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 插值绑定 -->
+      <p>{{name}}</p>
+      <!-- 指令解析 -->
+      <p m-text="name"></p>
+      <p>{{number}}</p>
+      <p>{{doubleAge}}</p>
+      <!-- 双向绑定 -->
+      <input type="text" m-model="name" />
+      <button @click="changeName">预测一下</button>
+      <!-- html内容解析 -->
+      <div m-html="html"></div>
+    </div>
+    <script src="./compile.js"></script>
+    <script src="./mvue.js"></script>
+    <script>
+      const app = new MVue({
+        el: "#app", // 挂载点
+        data: {
+          name: "Kobe",
+          number: 24,
+          html: "<button>一个按钮</button>",
+        },
+        created() {
+          // 生命周期钩子
+          console.log("开始");
+          setTimeout(() => {
+            this.name = "James";
+            this.number = 23;
+            console.log("结束");
+          }, 1500);
+        },
+        methods: {
+          // 方法
+          changeName() {
+            this.name = "湖人总冠军";
+            this.number = 66666666;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>测试一下MVue</title>
+  </head>
+  <body>
+    <script src="./mvue.js"></script>
+    <script>
+      const app = new MVue({
+        data: {
+          name: "I am test.",
+          foo: {
+            bar: "bar",
+          },
+        },
+      });
+
+      app.$data.name = "Hello, Vue.";
+      app.$data.foo.bar = "new Bar";
+    </script>
+  </body>
+</html>
