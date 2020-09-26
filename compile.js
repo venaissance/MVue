@@ -49,7 +49,6 @@ class Compiler {
           if (this.isDirective(attrName)) {
             // m-text
             const dir = attrName.substring(2); // text, html...
-            console.log(dir);
             // 执行指令
             this[dir] && this[dir](node, this.$vm, exp);
           }
