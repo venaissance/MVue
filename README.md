@@ -2,7 +2,9 @@
 
 基于 Vue2 原理实现的简易 MVue框架 ，功能包括数据响应式、模板编译、双向绑定，主要用于个人学习。
 
-### 功能点演示
+### 功能点展示
+
+[预览链接](https://venaissance.github.io/MVue/final.html)
 
 ```html
   <body>
